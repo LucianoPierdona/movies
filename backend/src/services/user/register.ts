@@ -6,7 +6,7 @@ export interface IRegisterUser extends IUser {
   movieId: Types.ObjectId;
 }
 
-export const register = async (attrs: IRegisterUser) => {
+export const register = async (attrs: IRegisterUser): Promise<IUser> => {
   const movie = await Movie.findById(attrs.movieId);
 
   if (!movie) {

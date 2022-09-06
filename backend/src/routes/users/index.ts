@@ -3,6 +3,6 @@ import { list } from "./list";
 
 const router = Router();
 
-router.get("/users", list);
+router.get("/", list);
 
 export { router as usersRouter };
