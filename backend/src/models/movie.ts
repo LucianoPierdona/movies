@@ -1,6 +1,7 @@
-import mongoose from "mongoose";
+import mongoose, { Types } from "mongoose";
 
 export interface IMovie {
+  _id?: Types.ObjectId;
   title: string;
   duration: number;
   startDate: Date;
