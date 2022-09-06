@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 export const Wrapper = styled.div`
   margin-bottom: 20px;
@@ -50,12 +50,12 @@ export const Droparea = styled.div`
 `;
 
 export const InputFile = styled.input`
-  display: block;
-  margin: 0 auto;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  position: absolute;
+  // display: block;
+  // margin: 0 auto;
+  // height: 100%;
+  // width: 100%;
+  // opacity: 0;
+  // position: absolute;
   cursor: pointer;
 `;
 
@@ -69,7 +69,7 @@ export const Button = styled.button`
   padding: 15px 40px;
   background: #73a9fe;
   color: #fff;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   margin-top: 20px;
 
   &:hover {
