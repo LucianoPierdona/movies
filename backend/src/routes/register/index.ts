@@ -3,6 +3,6 @@ import { register } from "./register";
 
 const router = Router();
 
-router.post("/register", register);
+router.post("/", register);
 
 export { router as registerRouter };

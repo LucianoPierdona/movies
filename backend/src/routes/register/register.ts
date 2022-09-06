@@ -1,5 +1,9 @@
 import { Request, Response } from "express";
 
-export const register = (req: Request, res: Response) => {
-  return res.status(201).send("ok");
+import { register as registerUser } from "../../services/user";
+
+export const register = async (req: Request, res: Response) => {
+  const created = await registerUser(req.body);
+
+  return res.status(201).send(created);
 };
