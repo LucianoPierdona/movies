@@ -1,11 +1,11 @@
-// import { generateRandomId } from '../../../utils/common';
-
-import { User } from '../model';
-import { getUsers } from './get-users';
+import axios from "axios";
+import { User } from "../model";
 
 export const addUser = async (data: User): Promise<void> => {
-  await localStorage.setItem(
-    'users',
-    JSON.stringify([ ...(await getUsers()), data ])
-  );
+  const requestData = {
+    ...data,
+    ...(data.movie && { movieId: data.movie?._id }),
+  };
+
+  await axios.post("http://localhost:3001/register", requestData);
 };

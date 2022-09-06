@@ -1,12 +1,8 @@
-import { User } from '../model';
+import { User } from "../model";
+import axios from "axios";
 
 export const getUsers = async (): Promise<User[]> => {
-  const usersStringified = await localStorage.getItem('users');
-  let users: User[] = [];
+  const { data: users } = await axios.get("http://localhost:3001/users");
 
-  if (usersStringified) {
-    users = JSON.parse(usersStringified);
-  }
-
-  return Promise.resolve(users);
-}
+  return users;
+};
