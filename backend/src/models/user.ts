@@ -2,6 +2,7 @@ import mongoose, { Types } from "mongoose";
 import { IMovie } from "./movie";
 
 export interface IUser {
+  _id?: Types.ObjectId;
   firstName: string;
   lastName: string;
   avatarBase64: string;
