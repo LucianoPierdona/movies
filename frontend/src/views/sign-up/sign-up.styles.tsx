@@ -49,13 +49,23 @@ export const Droparea = styled.div`
   }
 `;
 
+export const InputFileDiv = styled.div`
+  text-align: center;
+`;
+
 export const InputFile = styled.input`
-  // display: block;
-  // margin: 0 auto;
-  // height: 100%;
-  // width: 100%;
-  // opacity: 0;
-  // position: absolute;
+  display: none;
+`;
+
+export const InputFileLabel = styled.label`
+  padding: 10px 10px;
+  width: 150px;
+  background-color: #999;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  margin: 15px auto;
   cursor: pointer;
 `;
 
@@ -82,9 +92,12 @@ export const ClearButton = styled.button`
   margin: 0 auto;
   border: none;
   cursor: pointer;
-  font-size: 14px;
-  border-radius: 40px;
-  padding: 12px 25px;
+  padding: 5px 5px;
+  width: 150px;
+  background-color: #333;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
   background: #ccc;
   transition: all .3s ease;
   margin-top: 12px;

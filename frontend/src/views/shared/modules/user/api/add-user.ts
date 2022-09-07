@@ -7,5 +7,8 @@ export const addUser = async (data: User): Promise<void> => {
     ...(data.movie && { movieId: data.movie?._id }),
   };
 
-  await axios.post("http://localhost:3001/register", requestData);
+  await axios.post(
+    `${process.env.REACT_APP_BACKEND_URL}/register`,
+    requestData
+  );
 };

@@ -11,12 +11,13 @@ import {
   Input,
   InputFile,
   Button,
-  Droparea,
   ClearButton,
   Preview,
   Img,
   Label,
   Select,
+  InputFileLabel,
+  InputFileDiv,
 } from "./sign-up.styles";
 
 const SignUpView: React.FC<HookData> = ({
@@ -60,17 +61,21 @@ const SignUpView: React.FC<HookData> = ({
               required
             />
             <Label>Avatar</Label>
-            <div>
-              <InputFile
-                id="avatar"
-                type="file"
-                placeholder="Avatar"
-                onChange={handleChangeAvatar}
-              />
-            </div>
+            <InputFileDiv>
+              <InputFileLabel>
+                Upload file{" "}
+                <InputFile
+                  type="file"
+                  id="avatar"
+                  placeholder="Avatar"
+                  onChange={handleChangeAvatar}
+                  required
+                />
+              </InputFileLabel>
+            </InputFileDiv>
 
             {data.avatarBase64 && (
-              <Droparea>
+              <InputFileDiv>
                 <Preview id="preview">
                   {" "}
                   <Img src={data.avatarBase64} />{" "}
@@ -78,7 +83,7 @@ const SignUpView: React.FC<HookData> = ({
                 <ClearButton id="clear" onClick={handleClearAvatar}>
                   Clear
                 </ClearButton>
-              </Droparea>
+              </InputFileDiv>
             )}
 
             <Label>Email</Label>
