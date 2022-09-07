@@ -1,10 +1,11 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
   text-align: center;
   margin: 20px 0;
 
   & a {
+    text-decoration: none;
     display: inline-block;
     margin-right: 10px;
     color: blue;
