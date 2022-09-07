@@ -7,13 +7,15 @@ export interface IRegisterUser extends IUser {
 }
 
 export const register = async (attrs: IRegisterUser): Promise<IUser> => {
-  const movie = await Movie.findById(attrs.movieId);
+  if (attrs.movieId) {
+    const movie = await Movie.findById(attrs.movieId);
 
-  if (!movie) {
-    throw new Error("Movie not found");
+    if (!movie) {
+      throw new Error("Movie not found");
+    }
+
+    Object.assign(attrs, { movie });
   }
-
-  Object.assign(attrs, { movie });
 
   return User.build(attrs).save();
 };
